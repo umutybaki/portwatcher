@@ -2,12 +2,12 @@
   <img src="logo.svg" width="160" alt="PortWatcher Logo">
   <h1>PortWatcher</h1>
 </div>
-**PortWatcher** is a lightweight, minimal macOS menubar utility designed for developers. It helps you quickly identify and terminate processes listening on `localhost` ports—perfect for those times you forget to close an `npm` server or a background Python script.
+PortWatcher is a lightweight, minimal macOS menubar utility designed for developers. It helps you quickly identify and terminate processes listening on `localhost` ports. This was designed precisely for closing unwanted and forgotten npm applications just by a click.
 
 ## ✨ Features
 
--   **Snappy Interface**: No animations, just instant access to your active ports.
--   **Intelligent App Resolution**: Automatically identifies the parent application (e.g., "Visual Studio Code" instead of just "electron" or "Code Helper").
+-   **Snappy Interface**: No animations, instant access to your active ports.
+-   **Intelligent App Resolution**: Automatically identifies the parent application, e.g., "Visual Studio Code" or "node".
 -   **Graceful & Forceful Termination**:
     -   **Quit**: Sends a graceful `SIGTERM` to the process.
     -   **Force**: Sends a `SIGKILL` for stubborn background processes.
@@ -16,6 +16,7 @@
 -   **Left/Right Click Mastery**:
     -   **Left-Click**: View and manage active ports.
     -   **Right-Click**: Access Settings or Quit PortWatcher.
+-   **Fully Self-Contained and Native**: All code is self contained without any dependency and written completely with Swift and SwiftUI. 
 
 ## 🚀 Installation
 
@@ -37,8 +38,8 @@ The installer will build the app, move it to your `/Applications` folder, and la
 
 ## 🛠️ Usage
 
--   **Check Ports**: Click the Globe icon in your menubar to see what's running.
--   **Kill a Process**: Use the **Quit** or **Force** buttons next to any port.
+-   **Check Ports**: Click the icon in your menubar to see what's running.
+-   **Kill a Process**: Use the **Quit (blue cross)** or **Force Quit (red cross)** buttons next to any port.
 -   **Configure**: Right-click the menubar icon and select **Settings...** to toggle auto-refresh or filtering.
 -   **Manual Refresh**: Click the circular arrow icon in the top right of the popover.
 
