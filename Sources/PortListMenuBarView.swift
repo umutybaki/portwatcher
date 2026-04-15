@@ -60,10 +60,17 @@ struct PortListMenuBarView: View {
                     VStack(spacing: 0) {
                         ForEach(processService.activeProcesses) { process in
                             HStack(spacing: 12) {
-                                Image(systemName: "network")
-                                    .font(.system(size: 13))
-                                    .foregroundColor(.blue)
-                                    .frame(width: 18)
+                                if let nsImage = process.icon {
+                                    Image(nsImage: nsImage)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 18, height: 18)
+                                } else {
+                                    Image(systemName: "network")
+                                        .font(.system(size: 13))
+                                        .foregroundColor(.blue)
+                                        .frame(width: 18)
+                                }
                                 
                                 Text(process.name)
                                     .font(.body.weight(.medium))
