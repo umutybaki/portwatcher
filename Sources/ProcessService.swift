@@ -1,23 +1,11 @@
 import Foundation
 import Combine
-import AppKit
 
 struct ActiveProcess: Identifiable, Hashable {
     let id = UUID()
     let pid: Int
     let name: String
     let port: Int
-    let icon: NSImage?
-
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(pid)
-        hasher.combine(port)
-        hasher.combine(name)
-    }
-
-    static func == (lhs: ActiveProcess, rhs: ActiveProcess) -> Bool {
-        lhs.pid == rhs.pid && lhs.port == rhs.port && lhs.name == rhs.name
-    }
 }
 
 class ProcessService: ObservableObject {
@@ -80,8 +68,7 @@ class ProcessService: ObservableObject {
             // Avoid duplicates (e.g., IPv4 and IPv6)
             if !newProcesses.contains(where: { $0.port == port }) {
                 let resolvedName = self.getAppName(for: pid, fallbackName: name)
-                let icon = self.getIcon(for: pid)
-                newProcesses.append(ActiveProcess(pid: pid, name: resolvedName, port: port, icon: icon))
+                newProcesses.append(ActiveProcess(pid: pid, name: resolvedName, port: port))
             }
         }
         
@@ -112,17 +99,6 @@ class ProcessService: ObservableObject {
         } catch { }
         
         return fallbackName
-    }
-    
-    private func getIcon(for pid: Int) -> NSImage? {
-        if let app = NSRunningApplication(processIdentifier: Int32(pid)) {
-            // We use the icon for regular apps and accessory apps (like menubar-only apps)
-            // This generally excludes CLI tools which would have activationPolicy == .prohibited
-            if app.activationPolicy == .regular || app.activationPolicy == .accessory {
-                return app.icon
-            }
-        }
-        return nil
     }
     
     func terminate(pid: Int, force: Bool = false) {
