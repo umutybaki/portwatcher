@@ -23,6 +23,19 @@ PortWatcher is a lightweight, minimal macOS menubar utility designed for develop
 ### Download pre-built binary
 The easiest way to install PortWatcher is to download the latest **.dmg** file from the [Releases](https://github.com/umutybaki/PortWatcher/releases) page. Just open the DMG and drag PortWatcher to your Applications folder.
 
+> [!WARNING]
+> **"App cannot be opened because the developer cannot be verified"**
+> 
+> Because PortWatcher is an open-source tool and not signed with a paid Apple Developer certificate, macOS Gatekeeper may block the app on its first launch. To bypass this:
+> 1. Open **System Settings**.
+> 2. Navigate to the **Privacy & Security** tab.
+> 3. Scroll down to the bottom of the security section.
+> 4. You will see a message saying *"PortWatcher" was blocked to protect your Mac.* Click the **Open Anyway** button next to it.
+> 5. A prompt will appear. Click **Open** to launch the application.
+> 
+> You only need to do this once. After that, you can launch the app normally.
+
+
 ### Build from source
 Alternatively, you can build it yourself if you have Xcode or the Swift toolchain installed.
 
