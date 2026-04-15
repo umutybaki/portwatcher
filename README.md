@@ -1,7 +1,7 @@
-# 🌐 PortWatcher
-
-![PortWatcher Logo](logo.svg)
-
+<div align="center">
+  <img src="logo.svg" width="160" alt="PortWatcher Logo">
+  <h1>PortWatcher</h1>
+</div>
 **PortWatcher** is a lightweight, minimal macOS menubar utility designed for developers. It helps you quickly identify and terminate processes listening on `localhost` ports—perfect for those times you forget to close an `npm` server or a background Python script.
 
 ## ✨ Features
