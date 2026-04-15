@@ -4,3 +4,5 @@ build/
 *.o
 *.orig
 *.dmg
+AppIcon.icns
+AppIcon.iconset

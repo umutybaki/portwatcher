@@ -10,14 +10,24 @@ echo "🚀 Starting release process..."
 chmod +x build.sh
 ./build.sh
 
+echo "📦 Preparing DMG Staging..."
+STAGING_DIR="build/dmg_staging"
+rm -rf "$STAGING_DIR"
+mkdir -p "$STAGING_DIR"
+
+# Copy App to staging
+cp -R "build/${APP_NAME}.app" "$STAGING_DIR/"
+
+# Create symlink to /Applications
+ln -s /Applications "$STAGING_DIR/Applications"
+
 echo "📦 Packaging into Disk Image (.dmg)..."
 
-# 2. Create the DMG
-# -volname: Name of the mounted volume
-# -srcfolder: Path to the .app bundle
-# -ov: Overwrite existing DMG
-# -format UDZO: Compressed image format
-hdiutil create -volname "$APP_NAME" -srcfolder "build/${APP_NAME}.app" -ov -format UDZO "$DMG_NAME"
+# 2. Create the DMG from the staging directory
+hdiutil create -volname "$APP_NAME" -srcfolder "$STAGING_DIR" -ov -format UDZO "$DMG_NAME"
+
+# Clean up staging
+rm -rf "$STAGING_DIR"
 
 echo "-----------------------------------------------"
 echo "✅ Build Successful!"
