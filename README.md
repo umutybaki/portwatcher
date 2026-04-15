@@ -6,11 +6,11 @@ PortWatcher is a lightweight, minimal macOS menubar utility designed for develop
 
 ## ✨ Features
 
--   **Snappy Interface**: No animations, instant access to your active ports.
+-   **Native macOS Aesthetic**: Designed specifically to perfectly replicate standard macOS system menus (like the Wi-Fi list) for a native feel, complete with compact spacing, system fonts, and dynamic row-hover effects.
+-   **Frictionless Termination**: Quit buttons are permanently visible on the left side of every port for instant access.
+    -   **Quit**: Sends a graceful `SIGTERM` to the process (blue button).
+    -   **Force Quit**: Sends a `SIGKILL` for stubborn background processes (red button).
 -   **Intelligent App Resolution**: Automatically identifies the parent application, e.g., "Visual Studio Code" or "node".
--   **Graceful & Forceful Termination**:
-    -   **Quit**: Sends a graceful `SIGTERM` to the process.
-    -   **Force**: Sends a `SIGKILL` for stubborn background processes.
 -   **Smart Filtering**: Automatically hides common macOS system services (like AirPlay or Control Center) to focus on your dev environment.
 -   **Customizable Settings**: Toggle auto-refresh or system process filtering via the Preferences panel.
 -   **Left/Right Click Mastery**:
