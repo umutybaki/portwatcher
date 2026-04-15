@@ -20,7 +20,11 @@ PortWatcher is a lightweight, minimal macOS menubar utility designed for develop
 
 ## 🚀 Installation
 
-You can install PortWatcher directly from the source. Make sure you have Xcode or the Swift toolchain installed.
+### Download pre-built binary
+The easiest way to install PortWatcher is to download the latest **.dmg** file from the [Releases](https://github.com/umutybaki/PortWatcher/releases) page. Just open the DMG and drag PortWatcher to your Applications folder.
+
+### Build from source
+Alternatively, you can build it yourself if you have Xcode or the Swift toolchain installed.
 
 1.  **Clone the repository**:
     ```bash
